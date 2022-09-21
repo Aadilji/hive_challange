@@ -1,0 +1,12 @@
+21-Sep-22 11:30:46 - Database:- hive_challangeis created successfully
+21-Sep-22 11:30:46 - Table:- {tablename} is created successfully
+21-Sep-22 11:30:47 - data is loaded into department_data_temp_table
+21-Sep-22 11:31:04 - Table:- Permanent table department_data_perm_table is created successfully
+21-Sep-22 11:31:24 - sorting of the table in descending order wrt d_id is done and table is displayed as dataframe
+21-Sep-22 11:31:24 - Table:- Temprory csv table department_data_temp_table is deleted successfully
+21-Sep-22 13:06:01 - Database:- hive_challangeis created successfully
+21-Sep-22 13:06:02 - Table:- {tablename} is created successfully
+21-Sep-22 13:06:02 - data is loaded into department_data_temp_table
+21-Sep-22 13:06:16 - Table:- Permanent table department_data_perm_table is created successfully
+21-Sep-22 13:06:35 - sorting of the table in descending order wrt d_id is done and table is displayed as dataframe
+21-Sep-22 13:06:36 - Table:- Temprory csv table department_data_temp_table is deleted successfully
