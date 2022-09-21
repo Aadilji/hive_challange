@@ -1,0 +1,102 @@
+hdfs dfs -cat /tmp/hive_challange_hdfs/sales_order__data.csv;
+
+create table sales_order                                                                                                           
+(                                                                                                                                       
+ORDERNUMBER int,                                                                                                                            
+QUANTITYORDERED int,                                                                                                                       
+PRICEEACH float,
+ORDERLINENUMBER int,
+SALES float,
+SATUS string,
+QTR_ID int,
+MONTH_ID int,
+YEAR_ID int,
+PRODUCTLINE string,
+MSRP int,
+PRODUCTCODE string,
+PHONE string,
+CITY string,
+STATE string,
+POSTALCODE string,
+COUNTRY string,
+TERRITORY string,
+CONTACTLASTNAME string,
+CONTACTFIRSTNAME string,
+DEALSIZE string                                                                                      
+)                                                                                                                             
+row format delimited                                                                                                                    
+fields terminated by ','
+TBLPROPERTIES ("skip.header.line.count"="1");
+
+LOAD DATA INPATH '/tmp/hive_challange_hdfs/sales_order_data.csv' INTO table sales_order;
+
+create table sales_order_orc                                                                                                           
+(                                                                                                                                       
+ORDERNUMBER int,                                                                                                                            
+QUANTITYORDERED int,                                                                                                                       
+PRICEEACH float,
+ORDERLINENUMBER int,
+SALES float,
+SATUS string,
+QTR_ID int,
+MONTH_ID int,
+YEAR_ID int,
+PRODUCTLINE string,
+MSRP int,
+PRODUCTCODE string,
+PHONE string,
+CITY string,
+STATE string,
+POSTALCODE string,
+COUNTRY string,
+TERRITORY string,
+CONTACTLASTNAME string,
+CONTACTFIRSTNAME string,
+DEALSIZE string                                                                                      
+)                                                                                                                             
+row format delimited                                                                                                                    
+fields terminated by ','
+STORED AS ORC
+TBLPROPERTIES ("skip.header.line.count"="1");
+
+INSERT INTO TABLE sales_order_orc SELECT * FROM sales_order;
+
+set hive.cli.print.header=true;
+a.
+select sum(sales) as total_sales, year_id from sales_order_orc group by year;
+
+b.
+select productline, count(quantityordered) from sales_order_orc group by productline limit 1;
+
+
+c.
+select sum(sales) as total_sales_per_year ,qtr_id from sales_order_orc group by qtr_id order by total_sales_per_year;
+
+
+
+d
+select sum(sales) as total_sales ,year_id  ,qtr_id from sales_order_orc group by qtr_id,year_id order by total_sales limit 1;
+
+e
+select country, max(sales) as max_min from sales_order_orc group by country order by maxi desc limit 1
+union all
+select country,min(sales) as max_min from sales_order_orc group by country order by maxi asc limit 1;
+
+
+
+
+f
+select qtr_id,city,sum(sales) from sales_order_orc group by qtr_id,city;
+
+
+
+h.
+all year wise
+select sum(sales) as total_sales_per_year ,qtr_id from sales_order_orc group by qtr_id;
+or
+year wise
+select sum(sales),year_id  ,qtr_id from sales_order_orc group by qtr_id,year_id;
+
+
+select sum(sales) as total_sales ,qtr_id from sales_order_orc group by qtr_id order by total_sales Desc limit 1;
+

@@ -1,0 +1,71 @@
+#
+
+create table if not exists AirQualityindex                                                                                                          
+(                                                                                                                                       
+Date date,                                                                                                                            
+Time string,                                                                                                                       
+CO_GT float,
+PT08_S1_CO int,
+NMHC_GT int,
+C6H6_GT float,
+PT08_S2_NMHC int,
+NOx_GT int,
+PT08_S3_NOx int,
+NO2_GT int,
+PT08_S4_NO2 int,
+PT08_S5_O3	 int,
+T float,
+RH float,
+AH float                                                                                  
+)                                                                                                                             
+row format delimited                                                                                                                    
+fields terminated by ','
+TBLPROPERTIES ("skip.header.line.count"="1");
+
+LOAD DATA INPATH '/tmp/hive_challange_hdfs/AirQualityUCI.csv' INTO table AirQualityindex;
+
+select max(T) from AirQualityindex;
+
+alter table AirQualityindex change date Date string;
+
+select * from AirQualityindex limit 5;
+
+select DATE_FORMAT(to_date(from_unixtime(unix_timestamp(Date , 'DD/MM/YYYY'))),'MMM-YYYY'), max(PT08_S3) from AirQualityindex group by DATE_FORMAT(to_date(from_unixtime(unix_timestamp(Date , 'DD/MM/YYYY'))),'MMM-YYYY');
+
+# filter
+
+select count(CO_GT) from AirQualityindex where PT08_S3< 700
+select CO_GT from AirQualityindex where T = 13.6 order by CO_GT Desc;
+
+select count(C6H6_GT) from AirQualityindex where C6H6_GT >11.0;
+
+select count(NOx_GT) from AirQualityindex where DATE_FORMAT(to_date(from_unixtime(unix_timestamp(Date , 'DD/MM/YYYY'))),'YYYY') = '2004';
+
+select *  from AirQualityindex where CO_GT like  '2%'  limit 2;
+
+alter table AirQualityindex change t Tt string;
+
+# regex
+select count(Tt) from AirQualityindex where Tt REGEXP '^-'
+
+# order by
+select C6H6_GT from AirQualityindex where Tt = 11 order by co Desc;
+
+# count
+select count(Tt) from AirQualityindex;
+
+# distinct
+select Distinct Tt from AirQualityindex where CO_GT like '3%' limit 10;
+
+select DATE_FORMAT(to_date(from_unixtime(unix_timestamp(Date , 'DD/MM/YYYY'))),'YYYY'), count(nox) from AirQualityindex group by DATE_FORMAT(to_date(from_unixtime(unix_timestamp(Date , 'DD/MM/YYYY'))),'YYYY');
+
+
+# union
+select count(NMHC_GT) from AirQualityindex where RH>40 and RH<60 union
+all 
+select count(CO_GT) from AirQualityindex where AH>1;
+
+create  view aadilview  as select DATE_FORMAT(to_date(from_unixtime(unix_timestamp(Date , 'DD/MM/YYYY'))),'YYYY'), count(C6H6_GT) from AirQualityindex group by DATE_FORMAT(to_date(from_unixtime(unix_timestamp(Date , 'DD/MM/YYYY'))),'YYYY');
+
+
+
