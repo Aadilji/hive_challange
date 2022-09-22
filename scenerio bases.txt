@@ -51,6 +51,10 @@ select count(Tt) from AirQualityindex where Tt REGEXP '^-'
 # order by
 select C6H6_GT from AirQualityindex where Tt = 11 order by co Desc;
 
+# Sort by statement
+select C6H6_GT from AirQualityindex where Tt = 11 sort by co Desc;
+
+
 # count
 select count(Tt) from AirQualityindex;
 
