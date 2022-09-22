@@ -10,6 +10,8 @@ scenerio based hive operations:- https://github.com/Aadilji/hive_challange/blob/
 
 hive operations challange assignment 3:- https://github.com/Aadilji/hive_challange/blob/main/hive%20challange%20assignment.txt 
 
+Joins solutions:- https://github.com/Aadilji/hive_challange/blob/main/joins.txt
+
 challange video:- https://github.com/Aadilji/hive_challange/blob/main/Hive_app_wih_python%20(1).mp4
 
 Linkedin post:- https://www.linkedin.com/posts/aadil-mansoori-29b358211_hivechallengewithshashank-hivechallange-activity-6978356248857468928-uM3g?utm_source=share&utm_medium=member_android
