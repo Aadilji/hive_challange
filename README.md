@@ -1,10 +1,16 @@
 # hive_challange
 
-Hive app:- https://github.com/Aadilji/hive_challange/tree/main/Hive-App/hive_python_application
+challange video:- https://github.com/Aadilji/hive_challange/blob/main/Hive_app_wih_python%20(1).mp4
+
+Linkedin post:- https://www.linkedin.com/posts/aadil-mansoori-29b358211_hivechallengewithshashank-hivechallange-activity-6978356248857468928-uM3g?utm_source=share&utm_medium=member_android
+
+All solutions with pics:- https://github.com/Aadilji/hive_challange/blob/main/All%20solutions%20with%20pics.pdf
 
 Interview questions on hive:- https://github.com/Aadilji/hive_challange/blob/main/Hive-Interview-questions-ineuron%20(1)%20(1).pdf
 
 Scenerio based questions hive:- https://github.com/Aadilji/hive_challange/blob/main/Scenario%20Based%20questions%20(1).pdf
+
+Hive app:- https://github.com/Aadilji/hive_challange/tree/main/Hive-App/hive_python_application
 
 scenerio based hive operations:- https://github.com/Aadilji/hive_challange/blob/main/scenerio%20bases.txt
 
@@ -12,6 +18,7 @@ hive operations challange assignment 3:- https://github.com/Aadilji/hive_challan
 
 Joins solutions:- https://github.com/Aadilji/hive_challange/blob/main/joins.txt
 
-challange video:- https://github.com/Aadilji/hive_challange/blob/main/Hive_app_wih_python%20(1).mp4
 
-Linkedin post:- https://www.linkedin.com/posts/aadil-mansoori-29b358211_hivechallengewithshashank-hivechallange-activity-6978356248857468928-uM3g?utm_source=share&utm_medium=member_android
+
+
+
