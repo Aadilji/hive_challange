@@ -4,7 +4,7 @@ Hive app:- https://github.com/Aadilji/hive_challange/tree/main/Hive-App/hive_pyt
 
 Interview questions on hive:- https://github.com/Aadilji/hive_challange/blob/main/Hive-Interview-questions-ineuron%20(1)%20(1).pdf
 
-Scenerio based questions hive:- https://github.com/Aadilji/hive_challange/blob/main/Scenario%20Based%20questions.pdf
+Scenerio based questions hive:- https://github.com/Aadilji/hive_challange/blob/main/Scenario%20Based%20questions%20(1).pdf
 
 scenerio based hive operations:- https://github.com/Aadilji/hive_challange/blob/main/scenerio%20bases.txt
 
