@@ -1,0 +1,65 @@
+id int, name string, age string, address string, salary int
+
+101,'Aadil',23,'Sendhwa',24000
+102,'Sania',18,'Indore',0
+103,'Iliyas',29,'Mumbai',30000
+104,'Sam',23,'Dubai',50000
+105,'Radheshyam',28,'Varanasi',80000
+
+'A15','15-07-2022',101,500
+'A16','16-07-2022',102,600
+'A17',17-07-2022',103,700
+'A18',18-07-2022',104,800
+'A19','19-07-2022',105,900
+
+create table customer_table
+(
+id int,
+name string,
+age string,
+address string,
+salary int
+)
+row format delimited
+Fields terminated by ',';
+
+create table order_table
+(
+oid string,
+date string,
+customer_id int,
+amount int
+)
+row format delimited
+Fields terminated by ',';
+
+load data local inpath '/tmp/hive_challange/customer_data.csv' overwrite into table customer_table;
+load data local inpath '/tmp/hive_challange/order_data.csv' overwrite into table order_table;
+
+# left join
+select c_t.id,c_t.name,o_t.oid,o_t.amount
+from customer_table as c_t left join order_table as o_t
+on c_t.id = o_t.customer_id
+order by c_t.name;
+
+
+# inner join
+select c_t.*,o_t.* from customer_table as c_t
+inner join order_table as o_t 
+on c_t.id = o_t.customer_id; 
+
+# right join
+select c_t.id,c_t.name,o_t.oid,o_t.amount
+from customer_table as c_t left join order_table as o_t
+on c_t.id = o_t.customer_id
+order by o_t.amount;
+
+# full outer join
+select c_t.id,c_t.name,o_t.oid,o_t.amount
+from customer_table as c_t full outer join order_table as o_t
+on c_t.id = o_t.customer_id
+order by o_t.amount;
+
+
+
+
