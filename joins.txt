@@ -36,7 +36,7 @@ Fields terminated by ',';
 load data local inpath '/tmp/hive_challange/customer_data.csv' overwrite into table customer_table;
 load data local inpath '/tmp/hive_challange/order_data.csv' overwrite into table order_table;
 
-# left join
+# right join
 select c_t.id,c_t.name,o_t.oid,o_t.amount
 from customer_table as c_t right join order_table as o_t
 on c_t.id = o_t.customer_id
@@ -48,7 +48,7 @@ select c_t.*,o_t.* from customer_table as c_t
 inner join order_table as o_t 
 on c_t.id = o_t.customer_id; 
 
-# right join
+# left join
 select c_t.id,c_t.name,o_t.oid,o_t.amount
 from customer_table as c_t left join order_table as o_t
 on c_t.id = o_t.customer_id
